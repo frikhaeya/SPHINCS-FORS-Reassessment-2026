@@ -139,3 +139,14 @@ establish permission to redistribute third-party contributions.
 ## Public evidence
 
 `evidence/step12_paper_evidence.zip` contains aggregate reports supplied by the author; these are numerical audit records, not the original private fixtures. `evidence/verify_paper_aggregates.py` checks aggregates only. `paper/` contains the reviewed IEEE-format preprint, not an IEEE-accepted paper.
+
+
+## Licensing
+
+The independently authored research components are provided
+under the MIT License described in
+[RESEARCH_CODE_LICENSE.md](RESEARCH_CODE_LICENSE.md).
+
+The underlying SPHINCS+ implementation and NIST-origin
+components retain their applicable third-party terms.
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
