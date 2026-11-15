@@ -1,0 +1,53 @@
+# NEVER track secret, private, or research-generated data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.p8
+*.p11
+*.der
+*.crt
+*.csr
+id_rsa*
+id_ed25519*
+*.bin
+*.npy
+*.npz
+*.req
+*.rsp
+*secret*
+*private*
+*seed*
+# Local experiment outputs and compiled software
+step[0-9]*/
+step[0-9]*_*/
+**/step[0-9]*_*/
+**/trial_*/
+**/data/
+**/toy/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+__pycache__/
+.venv/
+venv/
+.DS_Store
+__MACOSX/
+*.original-step2
+*.log
+# Avoid publishing old reports with uncorrected claims
+images/
+manifests/
+
+# Local documentation backups
+*.backup
+
+# Public source scripts for restricted seed-hypothesis experiments
+!scripts/step9_prf_partial_seed_test.py
+!scripts/step10_repeat_prf_partial_seed_test.py

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying reassessment manuscript and distinguish this 2026 follow-up from the 2025 Master's thesis artifact (v1.0)."
+title: "SPHINCS+ FORS: corrected follow-up research code and aggregate evidence"
+version: "2.0.0-rc1"
+authors:
+  - family-names: Frikha
+    given-names: Eya
+
+repository-code: "https://github.com/frikhaeya/SPHINCS-FORS-Leakage-Reassessment"
+
+preferred-citation:
+  type: unpublished
+  title: "Reassessing Hamming-Weight Leakage in SPHINCS+ FORS"
+  authors:
+    - family-names: Frikha
+      given-names: Eya
+  year: 2026
