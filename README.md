@@ -1,5 +1,7 @@
 # SPHINCS+ FORS — corrected follow-up research (v2.0.0-rc1)
 
+[Read the 2026 preprint (PDF)](paper/SPHINCS_FORS_Reassessment_Preprint.pdf)
+
 **Research artifact — not production cryptographic software.** See the security limitations and third-party notices below.
 
 This repository contains the corrected 2026 follow-up to my 2025 Master's research on SPHINCS+ FORS. It is maintained separately from the original thesis artifact, which contains earlier experimental methods and interpretations.
@@ -46,13 +48,13 @@ The starting implementation was obtained from the [Gorachya SPHINCS+ SHA-256-128
 
 A comparison with the [official SPHINCS+ implementation](https://github.com/sphincs/sphincsplus) indicates substantial code similarity. This does not by itself establish exact version ancestry or the licensing status of intermediary modifications.
 
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for documented upstream sources, relevant licensing information, and outstanding verification requirements.
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for documented upstream sources, relevant licensing information, and applicable licensing notices.
 
 ## What's corrected
 
 - Native `SPX_N=16`, `SPX_FORS_TREES=33`: selected FORS logging was changed to one 16-byte block per tree (528 bytes per signature).
 - Raw secret and exact-HW logging is **off by default**. `make` builds a library and produces no signatures or logging files. Explicit `-DENABLE_CPA_LOGGING` enables **dangerous research-only** logging. Never enable it for real signing keys.
-- The old `log_sk_seed` and deprecated 32-byte logging helpers were removed, as was the KAT driver that writes private key material to `.rsp` files.
+- The old `log_sk_seed` call is inactive; deprecated 32-byte logging helpers and the KAT driver that wrote private key material to `.rsp` files were removed.
 - Original `attack-code` and pre-correction result figures were excluded. The old zero-offset hypothesis is not secret-key recovery.
 
 ## Scientific scope
@@ -62,6 +64,13 @@ The preprint documents public-signature reconstruction of selected FORS byte HW,
 ## Reproduce fresh trials on a *disposable* test-only machine or working directory
 
 Requirements: Python 3.9+, C compiler, OpenSSL development headers/libraries; the source is provided for inspection. On macOS the scripts can detect Homebrew OpenSSL. `make` alone never logs secret values.
+
+On macOS with Homebrew OpenSSL, if the compiler cannot find `openssl/conf.h`, build using:
+
+```sh
+make -C sphincs-sha256-128f-code CPPFLAGS="-I$(brew --prefix openssl@3)/include"
+```
+
 
 ```sh
 make -C sphincs-sha256-128f-code
@@ -128,13 +137,10 @@ not measured power or electromagnetic traces.
 The experiments do not demonstrate unrestricted signing-seed
 recovery, physical side-channel exploitation, or forgery.
 
-Third-party attribution and unresolved redistribution questions
-are documented in `THIRD_PARTY_NOTICES.md`. Security testing
-does not establish redistribution rights.
+Third-party licensing and attribution are documented in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-Third-party source attribution and licensing information are
-provided in `THIRD_PARTY_NOTICES.md`. Attribution alone does not
-establish permission to redistribute third-party contributions.
+
 
 ## Public evidence
 
