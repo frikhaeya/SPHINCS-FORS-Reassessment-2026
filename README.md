@@ -46,7 +46,7 @@ Reference: https://github.com/sphincs/sphincsplus
 
 The starting implementation was obtained from the [Gorachya SPHINCS+ SHA-256-128f-simple repository](https://github.com/Gorachya/sphincs-sha256-128f-simple), as referenced in the Master's thesis.
 
-A comparison with the [official SPHINCS+ implementation](https://github.com/sphincs/sphincsplus) indicates substantial code similarity. This does not by itself establish exact version ancestry or the licensing status of intermediary modifications.
+The underlying cryptographic implementation closely follows the [official SPHINCS+ reference implementation](https://github.com/sphincs/sphincsplus).
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for documented upstream sources, relevant licensing information, and applicable licensing notices.
 
